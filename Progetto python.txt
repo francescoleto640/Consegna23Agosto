@@ -1,0 +1,42 @@
+import datetime
+def assistente_virtuale(comando):
+    if comando == "Qual è la data di oggi?":
+        oggi = datetime.datetoday()  
+        risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")
+    elif comando == "Che ore sono?":
+        ora_attuale = datetime.datetime.now().time()  
+        risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")
+    elif comando == "Come ti chiami?":
+        risposta = "Mi chiamo Assistente Virtuale"
+    else:
+        risposta = "Non ho capito la tua domanda."  
+    return risposta
+while True
+    comando_utente = input("Cosa vuoi sapere? ")
+    if comando_utente.lower() == "esci":
+        print("Arrivederci!")
+        break
+    else:
+        print(assistente_virtuale(comando_utente)) 
+
+
+
+
+Il codice simula un assistente virtuale in grado di rispondere a delle specifiche domande poste dall'utente.
+Le domande che ritroviamo nel codice sono le seguenti: 
+- Qual è la data di oggi?
+- Che ore sono?
+- Come ti chiami?
+Nel caso in cui, l'utente pone una differente domanda, il codice restituirà un messaggio con scritto:  "Non ho capito la tua  domanda".
+Inoltre, l'utente può anche uscire digitando "esci'.
+
+Errori:
+
+1.Nella riga "oggi = datetime.datetoday()". 
+Il metodo dovrebbe essere scritto: "datetime.date.today()"
+
+2.Nella riga del while True
+In questo caso basta aggiungere ":" per risolvere l'errore di sintassi 
+
+3.E' presente un problema di case sensitivity, ovvero, l'utente se non rispetta i caratteri maiuscoli e/o minuscoli riceverà dal codice "Non ho capito la tua domanda".
+In tal caso basta aggiungere il metodo comando = comando.lower()
